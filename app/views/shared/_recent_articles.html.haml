@@ -1,0 +1,7 @@
+#recent_articles
+  %h3 Recent Articles
+  %ul
+    - for article in articles
+      %li
+        %h4= link_to article.title, article, :remote => true
+        .divider

@@ -1,0 +1,66 @@
+$highlight: #ddda27;
+$gray: #cccccc;
+$margin: 16px;
+$padding: 32px;
+$radius: 5px;
+$p_size: 12px;
+
+@mixin button {
+  margin-top: $margin;
+  margin-right: $margin;
+  margin-left: $margin;
+  background-color: black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+@mixin shadow {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
+}
+
+@mixin form_input($color) {
+  width: 100%;
+  border-radius: $radius;
+  margin-bottom: $margin;
+  padding: 15px;
+  font-size: 20px;
+  outline: none;
+  
+  @if $color == dark {
+    background: rgba(255,255,255, 0.05);
+    color: rgba(255,255,255, 0.5);
+    border: 1px solid rgba(255,255,255, 0.1);
+  } @else if $color == light {
+    color: rgba(0,0,0, 0.5);
+    background: rgba(0,0,0, 0.05);
+    border: 1px solid rgba(0,0,0, 0.1);
+  }
+  
+  @include box-sizing(border-box);
+
+  &:hover,
+  &:focus {
+    border: 1px solid $highlight;
+    
+    @if $color == dark {
+      background: rgba(255,255,255, 0.5);
+      color: black;
+    } @else if $color == light {
+      background: rgba(221,218,39, 0.25);
+      color: black;
+    }
+  }
+}
+
+@mixin form_button($color) {
+  @if $color == dark {
+    @include button(black);
+  } @else if $color == light {
+    @include button($gray);
+  }
+  
+  border-radius: $radius;
+  text-transform: uppercase;
+}

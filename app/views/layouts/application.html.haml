@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title= "fusepilot | #{@title}"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #wrapper
+      = render :partial => "shared/header"
+      = yield
+      
+    = render :partial => "shared/footer"

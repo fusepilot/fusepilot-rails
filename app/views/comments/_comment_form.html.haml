@@ -1,0 +1,15 @@
+.comment_form
+  - if commentable.comments.count > 0
+    %h3 Add a new comment
+  - else
+    %h3 Be the first the comment
+     
+  = semantic_form_for [commentable, commentable.comments.build] do |f|
+    = f.input :name
+    = f.input :email
+    = f.input :comment
+  
+    = f.buttons do
+      = f.commit_button
+  
+  

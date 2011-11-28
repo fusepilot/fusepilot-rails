@@ -1,0 +1,13 @@
+.article
+  .details
+    = "#{format_date(article.created_at)} | #{pluralize(article.comments.count, 'comment')} | #{list_tags(article.tags)}"
+  .section_divider
+  
+  %h1= article.title
+  .main_title_divider
+  
+  %p= simple_format article.body
+  .section_divider
+  
+  = render :partial => "comments/comments", :locals => {:commentable => article}
+  = render :partial => "comments/comment_form", :locals => {:commentable => article}

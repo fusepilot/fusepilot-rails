@@ -1,0 +1,7 @@
+#article_tags
+  %h3 Tags
+  %ul
+    - for tag in Article.tag_counts
+      %li
+        %h4= link_to "#{tag.name} (#{tag.count})", tag
+        .divider

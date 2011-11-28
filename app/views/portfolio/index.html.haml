@@ -1,0 +1,5 @@
+= render :partial => "shared/landing"
+
+.projects
+  - @projects.each_with_index do |project, i|
+    = render :partial => "portfolio/project", :locals => {:project => project, :id => i}

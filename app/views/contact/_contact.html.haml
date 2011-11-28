@@ -1,0 +1,9 @@
+%h2 Contact me
+
+= semantic_form_for ContactMessage.new do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :message
+
+  = f.buttons do
+    = f.commit_button

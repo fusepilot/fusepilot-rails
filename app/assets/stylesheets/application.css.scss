@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require reset
+ *= require_self
+ *= require_tree .  
+*/
+
+@import "global";
+@import "bourbon";
+
+html, body {
+	background-color: #171717;
+  height: 100%;
+  background: url("pattern.png");
+  overflow-x: hidden;
+  font-family: Verdana;
+}
+
+textarea {
+  font-family: Verdana;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: $margin;
+}
+
+h1 { font-size: $p_size * 3; }
+h2 { font-size: $p_size * 2; }
+h3 { font-size: $p_size * 1.5; }
+h4 { font-size: $p_size * 1.5; }
+h5 { font-size: $p_size * 1.2; }
+h6 { font-size: $p_size * 1.2; }
+
+p {
+  font-size: $p_size;
+  letter-spacing: 0.025em;
+  line-height: 1.4em;
+}
+
+#wrapper {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: -41px;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: 95px;
+  z-index: 3;
+  top: 0;
+  
+  @include shadow;
+}
+
+#footer {
+  width: 100%;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  padding-top: $margin * 2;
+  padding-bottom: $margin * 2;
+  border-top: 1px solid $highlight;
+  background: rgba(0,0,0,.2);
+  
+  @include shadow;
+  
+  #container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    h2 {
+      color: $highlight;
+    }
+    
+    form {
+      list-style: none;
+      
+      label {
+        display: none;
+      }
+      
+      textarea,
+      input[type="text"],
+      input[type="email"] {
+        @include form_input(dark);
+      }
+      
+      input[type="submit"] {
+        float: right;
+        
+        @include form_button(dark);
+      }
+      
+      textarea {
+        height: 150px;
+      }
+    }
+  }
+}
+
+.liner {
+	margin:0 auto;
+	width:960px;
+}
+
+#landing {
+  margin-top: -100px;
+  margin-bottom: 100px;
+  
+  @include shadow;
+}
+
+#sidebar {
+  float: left;
+  width: 250px;
+  height: 100%;
+  margin-right: 10px;
+  margin-top: 50px;
+  
+  a {
+    font-size: 14px;
+    color: gray;
+  }
+}
+
+.divider {
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #252525;
+}
+
+.section_divider {
+  margin-bottom: 20px;
+  margin-left: -25px;
+  padding-right: 50px;
+  width: 100%;
+  border-top: 1px solid $gray;
+}
+
+.main_title_divider {
+  border-top: 1px solid $highlight;
+  margin-bottom: 10px;
+}
+
+.sub_title_divider {
+  border-top: 1px solid $gray;
+  margin-bottom: 10px;
+}
+
+.clearfix {
+  clear: both;
+}

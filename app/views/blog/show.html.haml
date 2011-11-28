@@ -1,0 +1,7 @@
+#blog
+  #sidebar
+    = render :partial => "shared/recent_articles", :locals => {:articles => @articles}
+    = render :partial => "shared/article_tags"
+    
+  #container
+    = render :partial => "articles/article", :locals => {:article => @article}

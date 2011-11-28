@@ -1,0 +1,14 @@
+.project{:data => {:project_id => project.id, :id => id}}
+  .image
+    = image_tag "video.png"
+  .gallery
+    = image_tag "video.png"
+    = image_tag "video.png"
+
+  .title_bar
+    .toggle_container{:data => {:project_id => project.id, :id => id}}
+    %h3.title= project.title
+    .toggle_gallery{:data => {:project_id => project.id, :id => id}}
+  
+  .container
+    %p= project.body

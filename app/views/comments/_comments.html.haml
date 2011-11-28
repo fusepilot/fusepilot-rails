@@ -1,0 +1,9 @@
+- if commentable.comments.count > 0
+  .comments
+    %h3= "Comments (#{commentable.comments.count})"
+    %ul
+      - for comment in commentable.comments
+        %li
+          = render :partial => "comments/comment", :locals => {:comment => comment}
+          - if comment != commentable.comments.last
+            .sub_title_divider

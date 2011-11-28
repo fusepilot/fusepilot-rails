@@ -1,0 +1,32 @@
+@import "global";
+@import "bourbon";
+
+.comment {
+  margin-bottom: $margin;
+}
+
+.comment_form {
+  form {
+    list-style: none;
+
+    label {
+      display: none;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="email"] {
+      @include form_input(light);
+    }
+
+    input[type="submit"] {
+      float: right;
+
+      @include form_button(light);
+    }
+
+    textarea {
+      height: 150px;
+    }
+  }
+}

@@ -1,6 +1,18 @@
 FusepilotRails::Application.routes.draw do
-  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  devise_for :users
+  
+  root :to => 'portfolio#index'
+  
+  match "tags/:id" => "tags#show", :as => "acts_as_taggable_on_tag"
+  
+  resources :contact_messages
+  
+  resources :articles, :path => "blog", :controller => "blog" do
+    resources :comments
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
