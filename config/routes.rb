@@ -4,7 +4,9 @@ FusepilotRails::Application.routes.draw do
   devise_for :users
   
   root :to => 'portfolio#index'
-  
+
+  match "/portfolio" => 'portfolio#index'
+  match "/blog" => "blog#index"
   match "tags/:id" => "tags#show", :as => "acts_as_taggable_on_tag"
   
   resources :contact_messages

@@ -44,3 +44,5 @@ gem "acts_as_commentable"
 gem "formtastic"
 gem 'acts-as-taggable-on'
 gem 'rails_admin_tag_list_field', :git => 'https://github.com/kryzhovnik/rails_admin_tag_list_field.git'
+gem 'navigasmic'
+gem 'paperclip'

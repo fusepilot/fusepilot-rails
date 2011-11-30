@@ -5,5 +5,5 @@
       - for comment in commentable.comments
         %li
           = render :partial => "comments/comment", :locals => {:comment => comment}
-          - if comment != commentable.comments.last
+          - unless comment == commentable.comments.last
             .sub_title_divider

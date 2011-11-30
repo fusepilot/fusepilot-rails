@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123084459) do
+ActiveRecord::Schema.define(:version => 20111130073254) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "teaser_file_name"
+    t.string   "teaser_content_type"
+    t.integer  "teaser_file_size"
+    t.datetime "teaser_updated_at"
+  end
+
+  create_table "articles_pictures", :force => true do |t|
+    t.integer "article_id"
+    t.integer "picture_id"
+  end
+
+  create_table "articles_teasers", :force => true do |t|
+    t.integer "article_id"
+    t.integer "teaser_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -43,12 +57,30 @@ ActiveRecord::Schema.define(:version => 20111123084459) do
     t.datetime "updated_at"
   end
 
+  create_table "pictures", :force => true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures_projects", :force => true do |t|
+    t.integer "project_id"
+    t.integer "picture_id"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "client"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "teaser_file_name"
+    t.string   "teaser_content_type"
+    t.integer  "teaser_file_size"
+    t.datetime "teaser_updated_at"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

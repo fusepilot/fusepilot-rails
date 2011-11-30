@@ -5,6 +5,8 @@ $padding: 32px;
 $radius: 5px;
 $p_size: 12px;
 
+@import "bourbon";
+
 @mixin button {
   margin-top: $margin;
   margin-right: $margin;
@@ -18,6 +20,22 @@ $p_size: 12px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.62);
+}
+
+@mixin content_box {
+  padding: 25px;
+  border: 10px solid black;
+
+  background-color: white;
+  color: black;
+
+  a:visited,
+  a:active {
+    color: black;
+  }
+
+  @include shadow;
+  @include border-radius($radius);
 }
 
 @mixin form_input($color) {
@@ -52,6 +70,12 @@ $p_size: 12px;
       color: black;
     }
   }
+}
+
+@mixin inset($color) {
+  -moz-box-shadow: inset 0 1px 0 0 $color;
+  -webkit-box-shadow: inset 0 1px 0 0 $color;
+  box-shadow: inset 0 1px 0 0 $color;
 }
 
 @mixin form_button($color) {

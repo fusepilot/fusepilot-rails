@@ -6,8 +6,13 @@
   %h1= article.title
   .main_title_divider
   
+  - unless article.teaser.nil?
+    .teaser_image
+      = image_tag article.teaser.url(:medium)
+      
   %p= simple_format article.body
   .section_divider
   
   = render :partial => "comments/comments", :locals => {:commentable => article}
+  .sub_title_divider
   = render :partial => "comments/comment_form", :locals => {:commentable => article}

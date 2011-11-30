@@ -1,0 +1,39 @@
+@import "global";
+@import "bourbon";
+
+#header {
+  border-top: 2px solid $highlight;
+  width: 100%;
+  height: 95px;
+  background: #080808;
+  color: white;
+  margin-bottom: 100px;
+  min-width: 600px;
+  @include shadow;
+
+  h1 {
+    display: inline-block;
+  }
+
+  #logo {
+    width: 231px;
+    height: 48px;
+    margin-top: 23px;
+    margin-left: $margin * 2;
+    display: inline-block;
+    background: url("logo.png");
+  }
+
+  .navigation {
+    margin-top: $margin * 2;
+    margin-right: $margin * 2;
+    display: inline-block;
+    float: right;
+
+    li {
+      display: inline-block;
+
+      @include form_button(dark)
+    }
+  }
+}

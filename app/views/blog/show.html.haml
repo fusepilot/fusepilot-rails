@@ -1,7 +1,7 @@
-#blog
-  #sidebar
-    = render :partial => "shared/recent_articles", :locals => {:articles => @articles}
-    = render :partial => "shared/article_tags"
+#blog_container
+  = render :partial => "shared/sidebar"
     
-  #container
-    = render :partial => "articles/article", :locals => {:article => @article}
+  #article_container
+    = render :partial => "blog/article", :locals => {:article => @article}
+  
+  .clearfix

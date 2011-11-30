@@ -1,2 +1,21 @@
-- for article in @articles
-	= article.title
+#blog_container
+  = render :partial => "shared/sidebar"
+  
+  #article_tease_container
+    .details
+      = "#{Article.all.count} articles | #{Comment.all.count} comments | " 
+    .section_divider
+
+    %h1 Articles
+    .main_title_divider
+    %ul
+      - for article in @articles
+        %li
+          = render :partial => "blog/article_tease", :locals => {:article => article}
+          - unless article == @articles.last
+            .sub_title_divider
+            
+    .section_divider        
+    .pagination
+      <- Older
+        

@@ -1,7 +1,8 @@
-#article_tags
+#article_tags.sidebar_child
   %h3 Tags
   %ul
-    - for tag in Article.tag_counts
+    - Article.tag_counts.each_with_index do |tag, i|
       %li
         %h4= link_to "#{tag.name} (#{tag.count})", tag
-        .divider
+        - unless i == Article.tag_counts.count - 1
+          .divider
